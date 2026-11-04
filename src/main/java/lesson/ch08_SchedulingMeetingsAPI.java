@@ -18,20 +18,20 @@ public class ch08_SchedulingMeetingsAPI {
 	 * List[Meeting], but it doesn't matter here, plus we already know how to deal
 	 * with parsing.
 	 */
-	static List<MeetingTime> calendarEntriesApiCall(String name) {
+	static List<ch08_SchedulingMeetingsImpure.MeetingTime> calendarEntriesApiCall(String name) {
 		Random rand = new Random();
 		if (rand.nextFloat() < 0.25)
 			throw new RuntimeException("Connection error");
 		if (name.equals("Alice"))
-			return List.of(new MeetingTime(8, 10), new MeetingTime(11, 12));
+			return List.of(new ch08_SchedulingMeetingsImpure.MeetingTime(8, 10), new ch08_SchedulingMeetingsImpure.MeetingTime(11, 12));
 		else if (name.equals("Bob"))
-			return List.of(new MeetingTime(9, 10));
+			return List.of(new ch08_SchedulingMeetingsImpure.MeetingTime(9, 10));
 		else { // random meeting starting between 8 and 12, and ending between 13 and 16
-			return List.of(new MeetingTime(rand.nextInt(5) + 8, rand.nextInt(4) + 13));
+			return List.of(new ch08_SchedulingMeetingsImpure.MeetingTime(rand.nextInt(5) + 8, rand.nextInt(4) + 13));
 		}
 	}
 
-	static void createMeetingApiCall(List<String> names, MeetingTime meetingTime) {
+	static void createMeetingApiCall(List<String> names, ch08_SchedulingMeetingsImpure.MeetingTime meetingTime) {
 		// Note that it also may fail fail, similarly to calendarEntriesApiCall, but we
 		// don't show it in the book:
 		// Random rand = new Random();
@@ -44,7 +44,7 @@ public class ch08_SchedulingMeetingsAPI {
 		// don't show it in the book:
 		// Random rand = new Random();
 		// if(rand.nextFloat() < 0.25) throw new RuntimeException("💣");
-		System.out.printf("SIDE-EFFECT: Created meeting %s for %s\n", new MeetingTime(startHour, endHour),
+		System.out.printf("SIDE-EFFECT: Created meeting %s for %s\n", new ch08_SchedulingMeetingsImpure.MeetingTime(startHour, endHour),
 				Arrays.toString(names.toArray()));
 	}
 }
