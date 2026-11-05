@@ -11,3 +11,6 @@ project/metals.sbt
 .bsp
 .vscode
 src/main/scala/Playground.scala
+
+.claude/settings.local.json
+docs/book/
