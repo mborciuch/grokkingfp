@@ -42,7 +42,6 @@ object ch06_TvShows extends App {
       val name      = rawShow.substring(0, bracketOpen).trim
       val yearStart = Integer.parseInt(rawShow.substring(bracketOpen + 1, dash))  // or: .toInt
       val yearEnd   = Integer.parseInt(rawShow.substring(dash + 1, bracketClose)) // or: .toInt
-
       TvShow(name, yearStart, yearEnd)
     }
 
