@@ -72,9 +72,9 @@ object ch06_TvShows extends App {
         yearEnd <- extractYearEnd(show).orElse(extractOneYear(show))
       } yield TvShow(name, yearStart, yearEnd)
 
-      val res1 = extractName(show).map(name => extractYearStart(show)
+//      val res1 = extractName(show).map(name => extractYearStart(show)
         
-      val result = extractName(show).map(name => extractYearStart(show).map(ys => extractYearEnd(show).map(ye => extractYearEnd(show))))
+//      val result = extractName(show).map(name => extractYearStart(show).map(ys => extractYearEnd(show).map(ye => extractYearEnd(show))))
 
     }
 
